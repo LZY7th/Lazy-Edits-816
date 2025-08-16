@@ -107,3 +107,53 @@ form?.addEventListener('submit', e => {
     if(ok) ok.style.display = 'block';
   }, 400);
 });
+// ===== Auto aspect-ratio + safe lazy loading for images =====
+(function () {
+  // Treat these as "priority" even if they don't have data-priority (adjust if needed)
+  const isPriority = (img) =>
+    img.hasAttribute('data-priority') ||
+    img.classList.contains('brand-logo') ||         // keep logo eager if you want
+    img.closest('header')?.classList.contains('hero'); // images inside .hero
+
+  function setRatio(img) {
+    try {
+      const w = img.naturalWidth;
+      const h = img.naturalHeight;
+      if (w > 0 && h > 0) {
+        img.style.aspectRatio = `${w} / ${h}`;
+      }
+    } catch (_) {}
+  }
+
+  function prepImage(img) {
+    // Only add lazy/decoding for non-priority images
+    if (!isPriority(img)) {
+      if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+    }
+    // If width/height already exist, browser can reserve space; still set aspect-ratio to be safe
+    if (img.complete) {
+      setRatio(img);
+    } else {
+      img.addEventListener('load', () => setRatio(img), { once: true });
+      img.addEventListener('error', () => {}, { once: true });
+    }
+  }
+
+  // Run on existing images
+  document.querySelectorAll('img').forEach(prepImage);
+
+  // If images are added later (e.g., carousels/lightbox), observe and apply automatically
+  const mo = new MutationObserver((entries) => {
+    for (const m of entries) {
+      m.addedNodes?.forEach((node) => {
+        if (node?.nodeType === 1) {
+          if (node.tagName === 'IMG') prepImage(node);
+          // If a container with images was added, handle its children too
+          node.querySelectorAll?.('img')?.forEach(prepImage);
+        }
+      });
+    }
+  });
+  mo.observe(document.documentElement, { childList: true, subtree: true });
+})();
