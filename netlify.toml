@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+
+# Send a notification email on form submissions
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+# Configure form notification to your inbox
+[notifications]
+  [[notifications.forms]]
+    # This uses Netlify Notifications. In your Netlify Site settings > Notifications,
+    # add an email notification for "Form submissions" to lzy7th@gmail.com
+    # (Netlify does not read an address from netlify.toml directly for privacy).
+    form = "contact"
+    to = "email"
