@@ -175,3 +175,15 @@ textarea{min-height:120px;resize:vertical}
   object-fit: cover;
   image-rendering: -webkit-optimize-contrast;
 }
+/* Reserve space once JS sets aspect-ratio; keep images responsive */
+img {
+  height: auto;
+  /* width stays as-is from your layout; if you want all inline images full-width, uncomment: */
+  /* width: 100%; */
+}
+
+/* If you know some images must be square (e.g., logo), enforce it: */
+.brand-logo {
+  aspect-ratio: 1 / 1;
+  object-fit: cover; /* keeps square crop if the file isn't square */
+}
