@@ -187,3 +187,49 @@ img {
   aspect-ratio: 1 / 1;
   object-fit: cover; /* keeps square crop if the file isn't square */
 }
+/* --- YouTube Facade --- */
+.yt-facade {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;            /* preserves layout, no CLS */
+  background: #000 center / cover no-repeat;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  border-radius: inherit;          /* respects parent rounding if any */
+  overflow: hidden;
+}
+
+/* Play button overlay (simple, lightweight) */
+.yt-facade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0.0) 0 35%, rgba(0,0,0,0.25) 36% 100%),
+    none;
+}
+
+.yt-facade::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+.yt-facade:focus-visible::before { outline: 2px solid #fff; outline-offset: 4px; }
+
+/* Triangle */
+.yt-facade .yt-play {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-42%, -50%); /* slight optic centering */
+  width: 0; height: 0;
+  border-left: 22px solid #fff;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
