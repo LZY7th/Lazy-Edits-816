@@ -167,3 +167,11 @@ textarea{min-height:120px;resize:vertical}
   .about-grid-v2{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
 }
+/* Prevent image stretching + reserve space */
+.brand-logo{
+  width: 48px;           /* match the width/height you set in HTML */
+  height: 48px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+}
