@@ -139,7 +139,7 @@ section{border-top:1px solid var(--line-dark)}
 
 /* ===== CONTACT (waves background ONLY, NO BAND) ===== */
 .s--waves{
-  background: url('https://res.cloudinary.com/dxvponxxg/image/upload/v1754755543/waves_ato7e8.png') center/cover no-repeat;
+  background: url('https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754755543/waves_ato7e8.png') center/cover no-repeat;
 }
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap: calc(var(--g) + 10px)}
 .panel-dark{border:1px solid var(--line-dark);border-radius:22px;padding:26px;background:color-mix(in srgb, var(--panel-dark) 85%, transparent)}
