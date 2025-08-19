@@ -233,3 +233,22 @@ img {
   border-bottom: 14px solid transparent;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
 }
+
+/* Keep image areas stable + responsive */
+.slide img,
+.hero img,
+.gallery img {
+  aspect-ratio: 4 / 3;   /* adjust per section if needed */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* If your hero is 16:9, override just that block */
+.hero img { aspect-ratio: 16 / 9; }
+
+/* Strong, visible focus for keyboard users */
+:focus-visible {
+  outline: 2px solid #1e90ff;
+  outline-offset: 2px;
+}
