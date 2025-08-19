@@ -282,14 +282,7 @@
 
                     <!-- Optional: pure-HTML fallback for users with JS disabled -->
                     <noscript>
-                     <iframe
-                      src="https://www.youtube-nocookie.com/embed/9k4Z2fg4eL8?rel=0&modestbranding=1&playsinline=1"
-                      title="YouTube video"
-                      loading="lazy"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      style="border:0; width:100%; aspect-ratio:16/9;">
-                     </iframe>
+                     <lite-youtube videoid="9k4Z22fg4eL8" style="max-width: 900px; margin: auto;"></lite-youtube>
                     </noscript>
 
                   </div>
@@ -553,5 +546,29 @@
   </div>
 
   <script src="/app.js" defer></script>
+
+ <script>
+ /*! ultra-tiny lite-youtube (no framework) */
+ class LiteYT extends HTMLElement{
+  connectedCallback(){
+    const vid = this.getAttribute('videoid');
+    this.attachShadow({mode:'open'}).innerHTML =
+      `<style>:host{display:block;position:relative;cursor:pointer;background:#000}
+      .thumb{aspect-ratio:16/9;background:#000 url(https://i.ytimg.com/vi/${vid}/hqdefault.jpg) center/cover no-repeat}
+      .play{position:absolute;inset:0;display:grid;place-items:center;font:700 16px/1 system-ui;color:#fff;background:transparent}
+      .play:before{content:"▶";font-size:56px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}</style>
+      <div class="thumb"></div><button class="play" aria-label="Play video"></button>`;
+    this.shadowRoot.querySelector('.play').addEventListener('click',()=>this._activate(vid),{once:true});
+  }
+  _activate(v){ this.innerHTML = `<iframe
+      title="YouTube video"
+      width="560" height="315" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      src="https://www.youtube-nocookie.com/embed/${v}?autoplay=1"></iframe>`; }
+ }
+ customElements.define('lite-youtube',LiteYT);
+ </script>
+
 </body>
 </html>
