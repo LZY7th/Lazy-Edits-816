@@ -252,3 +252,82 @@ img {
   outline: 2px solid #1e90ff;
   outline-offset: 2px;
 }
+
+/* =========================================================
+   PERFORMANCE + ACCESSIBILITY HARDENING (Lighthouse)
+   ========================================================= */
+
+/* 1) Stabilize image aspect ratios (prevents layout jank)
+   - Tell the browser how much space to reserve up-front
+   - Does not change rendered size; only reserves slots
+---------------------------------------------------------------- */
+.hero-img {                 /* main hero/banner */
+  aspect-ratio: 16 / 9;
+}
+
+.carousel .slide img {      /* case-study strip */
+  aspect-ratio: 16 / 9;
+}
+
+.svc-group .tile img {      /* service tiles are square by design */
+  aspect-ratio: 1 / 1;
+}
+
+/* Keep images responsive without distortion */
+img {
+  height: auto;
+  max-width: 100%;
+  display: block; /* removes baseline gap that can nudge layout */
+}
+
+
+/* 2) Strong, visible keyboard focus (meets WCAG)
+---------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid #1e90ff;   /* accessible blue focus ring */
+  outline-offset: 2px;
+}
+
+
+/* 3) Respect prefers-reduced-motion for users who request it
+---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* 4) Button contrast hardening (passes WCAG AA)
+   - Lighthouse flagged "Get Free Quote" and similar CTAs.
+   - This keeps the look simple but guarantees readable contrast.
+   - Adjust the background variable if your palette requires it.
+---------------------------------------------------------------- */
+.btn,
+.btn-cta {
+  color: #ffffff;                  /* readable on dark bg */
+  background-color: #0b0d12;       /* very dark brand-ish neutral */
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.btn:hover,
+.btn-cta:hover {
+  filter: brightness(1.1);
+}
+
+/* If you also render CTA links as <a class="btn-cta"> */
+a.btn, a.btn-cta {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+/* 5) Responsive embeds (covers the lite-youtube fallback/iframe)
+---------------------------------------------------------------- */
+iframe, video {
+  max-width: 100%;
+  height: auto;
+}
