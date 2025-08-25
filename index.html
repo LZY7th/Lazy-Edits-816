@@ -9,9 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Performance: warm up critical origins -->
-  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-  <link rel="preconnect" href="https://www.youtube.com" crossorigin>
 
 
   <!-- Fallbacks for older browsers -->
@@ -36,14 +33,14 @@
   <!-- Social (Open Graph + Twitter) -->
   <meta property="og:title" content="Charlotte Graphic Design Agency | Lazy Sundays Design Studio">
   <meta property="og:description" content="Strategic branding, graphic design, website design, motion, print, and SEO for Charlotte businesses. Get a same-day quote.">
-  <meta property="og:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/v1754934593/right1_wangdm.png?f_auto,q_auto,w=1200">
+  <meta property="og:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/v1754934593/right1_wangdm.png?f_auto,q_auto,w=1200">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lazywebsiteedit1.netlify.app/">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Charlotte Graphic Design Agency | Lazy Sundays Design Studio">
   <meta name="twitter:description" content="Strategic branding, graphic design, website design, motion, print, and SEO for Charlotte businesses. Get a same-day quote.">
-  <meta name="twitter:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/v1754934593/right1_wangdm.png?f_auto,q_auto,w=1200">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/v1754934593/right1_wangdm.png?f_auto,q_auto,w=1200">
 
   <meta name="theme-color" content="#0b0d12">
 
@@ -54,7 +51,8 @@
   "@type":"Organization",
   "name":"Lazy Sundays",
   "url":"https://lazywebsiteedit1.netlify.app/",
-  "logo":"https://res.cloudinary.com/dxvponxxg/image/upload/v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
+  "logo":"https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/
+v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
   "sameAs":[
     "https://www.instagram.com/lazysundaysclt",
     "https://www.linkedin.com/company/108332306"
@@ -78,7 +76,7 @@
     "@type": "LocalBusiness",
     "name": "Lazy Sundays Design Studio",
     "url": "https://lazysundays.com/",
-    "image": "https://res.cloudinary.com/dxvponxxg/image/upload/v1754934593/right1_wangdm.png",
+    "image": "https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/v1754934593/right1_wangdm.png",
     "telephone": "+1-276-759-2783",
     "email": "hello@lazysundays.com",
     "address": {"@type":"PostalAddress","addressLocality":"Charlotte","addressRegion":"NC","addressCountry":"US"},
@@ -154,6 +152,19 @@
         </div>
       </div>
       <noscript><img src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754934593/right1_wangdm.png" alt="Lazy Sundays hero" width="1600" height="900"/></noscript>
+
+      <!-- Real hero image for LCP (visible element) -->
+<img
+  class="hero-img"
+  src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754934593/right1_wangdm.png"
+  width="1600" height="900"
+  alt="Lazy Sundays hero"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+  style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1;"
+>
+
     </header>
 
     <!-- ===== TRUST ===== -->
@@ -276,14 +287,8 @@
               </div>
               <div>
                 <div class="tile">
-                  <div class="ph" style="aspect-ratio:16/9;border-bottom:none">
-                    <!-- YouTube Facade -->
-                    <div class="yt-facade" data-yt="9k4Z2fg4eL8" role="button" tabindex="0" aria-label="Play video"></div>
+                  <lite-youtube videoid="9k422fql4eP" style="max-width: 900px; margin: auto;"></lite-youtube>
 
-                    <!-- Optional: pure-HTML fallback for users with JS disabled -->
-                    <noscript>
-                     <lite-youtube videoid="9k4Z22fg4eL8" style="max-width: 900px; margin: auto;"></lite-youtube>
-                    </noscript>
 
                   </div>
                 </div>
