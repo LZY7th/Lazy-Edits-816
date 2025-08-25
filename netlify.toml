@@ -14,6 +14,8 @@
     form = "contact"
     to = "email"
 
+# netlify.toml
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
@@ -34,3 +36,11 @@
   [headers.values]
     Cache-Control = "no-cache"
     X-Content-Type-Options = "nosniff"
+
+# 🔒 Optional Security Boost (Best Practices / Lighthouse Security)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
