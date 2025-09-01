@@ -331,3 +331,89 @@ iframe, video {
   max-width: 100%;
   height: auto;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* General mobile fixes */
+    body {
+        padding: 0 15px;
+    }
+    
+    /* Navigation */
+    .nav-wrap {
+        min-height: 60px;
+        padding: 10px 0;
+    }
+    
+    .brand-logo {
+        height: 40px;
+    }
+    
+    /* Hero section */
+    .hero-content {
+        padding: 20px 15px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .hero-sub {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    /* Services grid */
+    .svc-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* YouTube video */
+    .title .ph {
+        min-height: 200px;
+        margin: 0 10px;
+    }
+    
+    /* Buttons */
+    .btn, .btn-cta {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    /* Text sizing */
+    h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    /* Contact form */
+    input, select, textarea {
+        padding: 15px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Case studies */
+    .case {
+        grid-column: span 12;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+}
