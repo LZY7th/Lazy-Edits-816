@@ -167,3 +167,8 @@ textarea{min-height:120px;resize:vertical}
   .about-grid-v2{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
 }
+
+.title .ph {
+    min-height: 400px;
+    width: 100%;
+}
