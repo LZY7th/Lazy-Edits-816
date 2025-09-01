@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Critical performance optimizations -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+  <!-- Preload critical resources first -->
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900/v1754934593/right1_wangdm.webp" fetchpriority="high">
+  
   <!-- Speed up connections to third-party hosts -->
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
   <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-  <link rel="preconnect" href="https://www.youtube.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Performance: warm up critical origins -->
-
-
-  <!-- Fallbacks for older browsers -->
+  <!-- DNS prefetch fallbacks for older browsers -->
   <link rel="dns-prefetch" href="//res.cloudinary.com">
   <link rel="dns-prefetch" href="//i.ytimg.com">
-  <link rel="dns-prefetch" href="//www.youtube.com">
+  <link rel="dns-prefetch" href="//www.youtube-nocookie.com">
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
-  <!-- Load main stylesheet without blocking render -->
-  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
-  <!-- If you import web fonts, add `&display=swap` in font URLs (or keep if already present) -->
+  <!-- Load main stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
 
   <!-- ===== SEO ===== -->
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Charlotte Graphic Design Agency | Lazy Sundays Design Studio</title>
   <meta name="description" content="Lazy Sundays is a Charlotte design studio with 20+ years of experience in brand strategy, graphic design, website design, animation & motion, print & packaging, and website SEO. Fast local quotes for Charlotte businesses."/>
   <link rel="canonical" href="https://lazysundays.com/"/>
@@ -33,14 +34,14 @@
   <!-- Social (Open Graph + Twitter) -->
   <meta property="og:title" content="Charlotte Graphic Design Agency | Lazy Sundays Design Studio">
   <meta property="og:description" content="Strategic branding, graphic design, website design, motion, print, and SEO for Charlotte businesses. Get a same-day quote.">
-  <meta property="og:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/v1754934593/right1_wangdm.png?f_auto,q_auto,w=1200">
+  <meta property="og:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_630/v1754934593/right1_wangdm.webp">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lazywebsiteedit1.netlify.app/">
+  <meta property="og:url" content="https://lazysundays.com/">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Charlotte Graphic Design Agency | Lazy Sundays Design Studio">
   <meta name="twitter:description" content="Strategic branding, graphic design, website design, motion, print, and SEO for Charlotte businesses. Get a same-day quote.">
-  <meta name="twitter:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/v1754934593/right1_wangdm.png?f_auto,q_auto,w=1200">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_630/v1754934593/right1_wangdm.webp">
 
   <meta name="theme-color" content="#0b0d12">
 
@@ -50,24 +51,14 @@
   "@context":"https://schema.org",
   "@type":"Organization",
   "name":"Lazy Sundays",
-  "url":"https://lazywebsiteedit1.netlify.app/",
-  "logo":"https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/
-v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
+  "url":"https://lazysundays.com/",
+  "logo":"https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_512,h_512/v1754965842/IMG_3315_ok5j4z.webp",
   "sameAs":[
     "https://www.instagram.com/lazysundaysclt",
     "https://www.linkedin.com/company/108332306"
   ]
   }
   </script>
-
-
-
-  <!-- Perf: hero LCP & preconnect -->
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754934593/right1_wangdm.png">
-  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css"/>
 
   <!-- LocalBusiness schema -->
   <script type="application/ld+json">
@@ -76,7 +67,7 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
     "@type": "LocalBusiness",
     "name": "Lazy Sundays Design Studio",
     "url": "https://lazysundays.com/",
-    "image": "https://res.cloudinary.com/dxvponxxg/image/upload/$1f_auto,q_auto/v1754934593/right1_wangdm.png",
+    "image": "https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_630/v1754934593/right1_wangdm.webp",
     "telephone": "+1-276-759-2783",
     "email": "hello@lazysundays.com",
     "address": {"@type":"PostalAddress","addressLocality":"Charlotte","addressRegion":"NC","addressCountry":"US"},
@@ -121,13 +112,12 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
     <div class="grid nav-wrap">
       <a href="#home" class="brand-link" aria-label="Back to top">
         <img
-  class="brand-logo"
-  src="https://res.cloudinary.com/.../IMG_3315_ok5j4z.png"
-  alt="Lazy Sundays logo"
-  width="48" height="48"
-  decoding="async"
-/>
-
+          class="brand-logo"
+          src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_96,h_96/v1754965842/IMG_3315_ok5j4z.webp"
+          alt="Lazy Sundays logo"
+          width="48" height="48"
+          decoding="async"
+        />
       </a>
       <div class="nav-links">
         <a href="#services">Services</a>
@@ -151,20 +141,30 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
           </div>
         </div>
       </div>
-      <noscript><img src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754934593/right1_wangdm.png" alt="Lazy Sundays hero" width="1600" height="900"/></noscript>
 
-      <!-- Real hero image for LCP (visible element) -->
-<img
-  class="hero-img"
-  src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754934593/right1_wangdm.png"
-  width="1600" height="900"
-  alt="Lazy Sundays hero"
-  loading="eager"
-  fetchpriority="high"
-  decoding="async"
-  style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1;"
->
-
+      <!-- Optimized hero image with responsive srcset -->
+      <picture class="hero-img">
+        <source 
+          media="(max-width: 768px)" 
+          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_800,h_600/v1754934593/right1_wangdm.webp 800w"
+          type="image/webp">
+        <source 
+          media="(max-width: 1200px)" 
+          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_800/v1754934593/right1_wangdm.webp 1200w"
+          type="image/webp">
+        <source 
+          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900/v1754934593/right1_wangdm.webp 1600w"
+          type="image/webp">
+        <img
+          src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900/v1754934593/right1_wangdm.jpg"
+          width="1600" height="900"
+          alt="Lazy Sundays hero"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1;"
+        >
+      </picture>
     </header>
 
     <!-- ===== TRUST ===== -->
@@ -184,7 +184,7 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
       <div class="wrap grid">
         <div class="section-head">
           <h2 class="h2">Charlotte Graphic Design & Branding Services</h2>
-          <p class="sub muted">See recent work inside each service. Click through when you’re ready to start.</p>
+          <p class="sub muted">See recent work inside each service. Click through when you're ready to start.</p>
         </div>
 
         <div class="rows">
@@ -212,16 +212,18 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754749505/CanopyCafe_nqm34f.png"
-                         alt="Charlotte restaurant branding — Canopy Cafe identity">
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754749505/CanopyCafe_nqm34f.webp"
+                         alt="Charlotte restaurant branding — Canopy Cafe identity"
+                         width="400" height="300">
                   </div>
                   <div class="bd"><div class="k">Branding</div><div class="tt">Charlotte Bistro — Rebrand</div></div>
                 </div>
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754749603/trading_view_elpdwl.png"
-                         alt="FinTech startup identity — funding-ready branding">
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754749603/trading_view_elpdwl.webp"
+                         alt="FinTech startup identity — funding-ready branding"
+                         width="400" height="300">
                   </div>
                   <div class="bd"><div class="k">Branding</div><div class="tt">FinTech — Fundraising Ready</div></div>
                 </div>
@@ -251,16 +253,18 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754750431/Screenshot_2025-08-09_at_10.39.59_AM_tnb4bi.png"
-                         alt="Wellness logo design — Charlotte health brand">
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754750431/Screenshot_2025-08-09_at_10.39.59_AM_tnb4bi.webp"
+                         alt="Wellness logo design — Charlotte health brand"
+                         width="400" height="300">
                   </div>
                   <div class="bd"><div class="k">Graphic</div><div class="tt">Wellness Logo</div></div>
                 </div>
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754750729/Db4D_h0pk4s.jpg"
-                         alt="YouTube logo redesign for local creator">
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754750729/Db4D_h0pk4s.webp"
+                         alt="YouTube logo redesign for local creator"
+                         width="400" height="300">
                   </div>
                   <div class="bd"><div class="k">Graphic</div><div class="tt">YouTube Logo</div></div>
                 </div>
@@ -274,7 +278,7 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
               <div>
                 <span class="pill">Animation & Motion</span>
                 <div class="t">Explainers & motion branding</div>
-                <p class="muted">Bring products and stories to life with motion that’s clear and compelling.</p>
+                <p class="muted">Bring products and stories to life with motion that's clear and compelling.</p>
                 <ul>
                   <li>2D / 3D animation</li>
                   <li>Explainers & product demos</li>
@@ -288,9 +292,6 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
               <div>
                 <div class="tile">
                   <lite-youtube videoid="9k422fql4eP" style="max-width: 900px; margin: auto;"></lite-youtube>
-
-
-                  </div>
                 </div>
               </div>
             </div>
@@ -318,16 +319,18 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754751909/Screenshot_2025-08-09_at_11.04.27_AM_kf4kqn.png"
-                         alt="Custom mylar bag packaging design — Charlotte">
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754751909/Screenshot_2025-08-09_at_11.04.27_AM_kf4kqn.webp"
+                         alt="Custom mylar bag packaging design — Charlotte"
+                         width="400" height="300">
                   </div>
                   <div class="bd"><div class="k">Packaging</div><div class="tt">Custom Mylar Bags</div></div>
                 </div>
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754752148/Screenshot_2025-08-09_at_11.08.56_AM_zbbe1p.png"
-                         alt="Myron jar labels — local product packaging">
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754752148/Screenshot_2025-08-09_at_11.08.56_AM_zbbe1p.webp"
+                         alt="Myron jar labels — local product packaging"
+                         width="400" height="300">
                   </div>
                   <div class="bd"><div class="k">Print</div><div class="tt">Myron Jars</div></div>
                 </div>
@@ -364,55 +367,33 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
               <div class="carousel" data-group="logo">
                 <button class="car-btn car-prev" aria-label="Previous">‹</button>
                 <div class="track">
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758987/Rainy_Day_App_lzvsbs.png" alt="Logo exploration board — Charlotte market fit"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758798/Screenshot_2025-08-09_at_12.58.51_PM_fby337.png" alt="Logo sheet — wellness & lifestyle motifs"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758796/Screenshot_2025-08-09_at_12.58.31_PM_nmjjqo.png" alt="Tech branding marks — identity drafts"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758795/Screenshot_2025-08-09_at_12.57.28_PM_pxgzef.png" alt="Typography-first mark — legibility tests"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758794/Screenshot_2025-08-09_at_12.56.12_PM_pws6yj.png" alt="Monochrome variants — packaging check"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758791/Screenshot_2025-08-09_at_12.54.36_PM_zlg9qe.png" alt="Color exploration — palette testing"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754758791/Screenshot_2025-08-09_at_12.54.23_PM_qqfzja.png" alt="Applications — signage & social preview"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758987/Rainy_Day_App_lzvsbs.webp" 
+                       alt="Logo exploration board — Charlotte market fit" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758798/Screenshot_2025-08-09_at_12.58.51_PM_fby337.webp" 
+                       alt="Logo sheet — wellness & lifestyle motifs" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758796/Screenshot_2025-08-09_at_12.58.31_PM_nmjjqo.webp" 
+                       alt="Tech branding marks — identity drafts" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758795/Screenshot_2025-08-09_at_12.57.28_PM_pxgzef.webp" 
+                       alt="Typography-first mark — legibility tests" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758794/Screenshot_2025-08-09_at_12.56.12_PM_pws6yj.webp" 
+                       alt="Monochrome variants — packaging check" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758791/Screenshot_2025-08-09_at_12.54.36_PM_zlg9qe.webp" 
+                       alt="Color exploration — palette testing" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758791/Screenshot_2025-08-09_at_12.54.23_PM_qqfzja.webp" 
+                       alt="Applications — signage & social preview" width="600" height="400"></div>
                 </div>
                 <button class="car-btn car-next" aria-label="Next">›</button>
               </div>
 
               <div>
                 <p class="case-copy">Selected logo explorations and systems crafted for clarity, memorability, and market fit.</p>
-                <div class="case-actions"><a href="#contact" class="btn">Start your project</a></div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Case 2: Character Design — Illustration -->
-          <article class="case" id="case2">
-            <div class="case-head">
-              <div>
-                <strong>Character Design — Illustration</strong>
-                <div class="case-meta">
-                  <span class="tag">Animation</span>
-                  <span class="tag">Hero Character</span>
-                  <span class="tag">Launch Assets</span>
-                </div>
-              </div>
-              <button class="case-btn" data-toggle="#case2">Click for details</button>
-            </div>
-
-            <div class="case-body">
-              <div class="carousel" data-group="char">
-                <button class="car-btn car-prev" aria-label="Previous">‹</button>
-                <div class="track">
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760482/Scorpion_rose_fd6sya.png" alt="Character concept art — scorpion rose"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760368/f6c94d42-4b6a-4130-a3bd-e03036808b3d_m0kqdy.png" alt="Vector hero mascot — bold geometric style"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760237/ChatGPT_Image_Jun_28_2025_at_05_11_32_PM_lspi5l.png" alt="Fantasy character sheet — color passes"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760237/ChatGPT_Image_Jun_27_2025_09_49_26_PM_uexntr.png" alt="Linework & shading — hero poses"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760183/ChatGPT_Image_Jul_2_2025_10_46_44_PM_q30hxq.png" alt="Mascot development — brand exploration"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760048/7b54034e-afb9-4fd5-a7f6-ffa3711a6d36_jqb5vk.png" alt="Moody illustration — atmospheric render"></div>
-                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto/v1754760033/1c2267ac-b9d4-44c1-a728-92f83d1f0ea9_hkqxl3.png" alt="Stylized vector set — brand icons"></div>
-                </div>
-                <button class="car-btn car-next" aria-label="Next">›</button>
-              </div>
-
-              <div>
-                <p class="case-copy">Hero characters and stylized illustrations for campaigns, intros, and product worlds.</p>
                 <div class="case-actions"><a href="#contact" class="btn">Plan your explainer</a></div>
               </div>
             </div>
@@ -436,8 +417,8 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
             </p>
 
             <p class="about-body">
-              We’re passionate about clarity, craft, and results: logos that carry a story, campaigns that convert, packaging that gets picked up,
-              and motion design that explains the complex in seconds. If you’re ready to grow in Charlotte, we’re ready to help.
+              We're passionate about clarity, craft, and results: logos that carry a story, campaigns that convert, packaging that gets picked up,
+              and motion design that explains the complex in seconds. If you're ready to grow in Charlotte, we're ready to help.
             </p>
 
             <ul class="about-list" aria-label="What you can expect">
@@ -474,14 +455,14 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
         <div class="contact-grid">
           <div class="panel-dark">
             <div class="h2" style="margin:0 0 10px">Request a Charlotte Design Quote</div>
-            <p class="lead muted">Tell us about your project and we’ll send a detailed quote within 24 hours. Expedited options available.</p>
+            <p class="lead muted">Tell us about your project and we'll send a detailed quote within 24 hours. Expedited options available.</p>
           </div>
 
           <!-- Netlify form -->
           <form class="panel-dark" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact">
             <p style="display:none;">
-              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
             <div style="display:grid;gap:16px">
               <div><label for="name">Full Name *</label><input id="name" name="name" required aria-required="true"></div>
@@ -526,7 +507,7 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
                 </select>
               </div>
               <div><label for="message">Project Details</label><textarea id="message" name="message" placeholder="Goals, deliverables, deadlines..."></textarea></div>
-              <div class="cta"><button type="submit" class="btn-cta">Get My Free Quote</button><div id="ok" style="margin-top:10px;color:#75f3c3;display:none;font-weight:700">Thanks! We’ll reply within 24 hours.</div></div>
+              <div class="cta"><button type="submit" class="btn-cta">Get My Free Quote</button><div id="ok" style="margin-top:10px;color:#75f3c3;display:none;font-weight:700">Thanks! We'll reply within 24 hours.</div></div>
             </div>
           </form>
         </div>
@@ -550,30 +531,123 @@ v1754965842/IMG_3315_ok5j4z.png?f_auto,q_auto&w=512",
     <button class="arrow next" aria-label="Next">›</button>
   </div>
 
-  <script src="/app.js" defer></script>
+  <script src="/app.js"></script>
 
- <script>
- /*! ultra-tiny lite-youtube (no framework) */
- class LiteYT extends HTMLElement{
-  connectedCallback(){
-    const vid = this.getAttribute('videoid');
-    this.attachShadow({mode:'open'}).innerHTML =
-      `<style>:host{display:block;position:relative;cursor:pointer;background:#000}
-      .thumb{aspect-ratio:16/9;background:#000 url(https://i.ytimg.com/vi/${vid}/hqdefault.jpg) center/cover no-repeat}
-      .play{position:absolute;inset:0;display:grid;place-items:center;font:700 16px/1 system-ui;color:#fff;background:transparent}
-      .play:before{content:"▶";font-size:56px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}</style>
-      <div class="thumb"></div><button class="play" aria-label="Play video"></button>`;
-    this.shadowRoot.querySelector('.play').addEventListener('click',()=>this._activate(vid),{once:true});
+  <!-- Optimized lite-youtube component -->
+  <script>
+  class LiteYT extends HTMLElement {
+    connectedCallback() {
+      const vid = this.getAttribute('videoid');
+      if (!vid) return;
+      
+      this.attachShadow({mode:'open'}).innerHTML =
+        `<style>
+        :host {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          background: #000;
+          contain: content;
+        }
+        .thumb {
+          aspect-ratio: 16/9;
+          background: #000 url(https://i.ytimg.com/vi/${vid}/hqdefault.jpg) center/cover no-repeat;
+          width: 100%;
+        }
+        .play {
+          position: absolute;
+          inset: 0;
+          display: grid;
+          place-items: center;
+          font: 700 16px/1 system-ui;
+          color: #fff;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+        .play::before {
+          content: "▶";
+          font-size: 56px;
+          filter: drop-shadow(0 2px 6px rgba(0,0,0,.6));
+        }
+        .play:hover::before {
+          transform: scale(1.1);
+          transition: transform 0.2s ease;
+        }
+        </style>
+        <div class="thumb"></div>
+        <button class="play" aria-label="Play ${vid} video"></button>`;
+      
+      this.shadowRoot.querySelector('.play').addEventListener('click', () => this._activate(vid), {once: true});
+    }
+    
+    _activate(v) { 
+      this.innerHTML = `<iframe
+        title="YouTube video player"
+        width="560" height="315" 
+        src="https://www.youtube-nocookie.com/embed/${v}?autoplay=1&rel=0&modestbranding=1"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+      </iframe>`;
+    }
   }
-  _activate(v){ this.innerHTML = `<iframe
-      title="YouTube video"
-      width="560" height="315" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-      allowfullscreen
-      loading="lazy"
-      src="https://www.youtube-nocookie.com/embed/${v}?autoplay=1"></iframe>`; }
- }
- customElements.define('lite-youtube',LiteYT);
- </script>
+  
+  if ('customElements' in window) {
+    customElements.define('lite-youtube', LiteYT);
+  }
+  </script>
 
 </body>
-</html>
+</html>">Start your project</a></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 2: Character Design — Illustration -->
+          <article class="case" id="case2">
+            <div class="case-head">
+              <div>
+                <strong>Character Design — Illustration</strong>
+                <div class="case-meta">
+                  <span class="tag">Animation</span>
+                  <span class="tag">Hero Character</span>
+                  <span class="tag">Launch Assets</span>
+                </div>
+              </div>
+              <button class="case-btn" data-toggle="#case2">Click for details</button>
+            </div>
+
+            <div class="case-body">
+              <div class="carousel" data-group="char">
+                <button class="car-btn car-prev" aria-label="Previous">‹</button>
+                <div class="track">
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760482/Scorpion_rose_fd6sya.webp" 
+                       alt="Character concept art — scorpion rose" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760368/f6c94d42-4b6a-4130-a3bd-e03036808b3d_m0kqdy.webp" 
+                       alt="Vector hero mascot — bold geometric style" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760237/ChatGPT_Image_Jun_28_2025_at_05_11_32_PM_lspi5l.webp" 
+                       alt="Fantasy character sheet — color passes" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760237/ChatGPT_Image_Jun_27_2025_09_49_26_PM_uexntr.webp" 
+                       alt="Linework & shading — hero poses" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760183/ChatGPT_Image_Jul_2_2025_10_46_44_PM_q30hxq.webp" 
+                       alt="Mascot development — brand exploration" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760048/7b54034e-afb9-4fd5-a7f6-ffa3711a6d36_jqb5vk.webp" 
+                       alt="Moody illustration — atmospheric render" width="600" height="400"></div>
+                  <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760033/1c2267ac-b9d4-44c1-a728-92f83d1f0ea9_hkqxl3.webp" 
+                       alt="Stylized vector set — brand icons" width="600" height="400"></div>
+                </div>
+                <button class="car-btn car-next" aria-label="Next">›</button>
+              </div>
+
+              <div>
+                <p class="case-copy">Hero characters and stylized illustrations for campaigns, intros, and product worlds.</p>
+                <div class="case-actions"><a href="#contact" class="btn
