@@ -169,6 +169,7 @@ textarea{min-height:120px;resize:vertical}
 }
 
 .title .ph {
-    min-height: 400px;
-    width: 100%;
+    min-height: 400px !important;
+    width: 100% !important;
+    aspect-ratio: 16/9 !important;
 }
