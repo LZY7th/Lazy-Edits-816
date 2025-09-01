@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<!-- Load main stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Critical CSS for above-the-fold content -->
+  <style>
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .brand-logo { width: 48px; height: 48px; }
+  </style><!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Critical performance optimizations -->
@@ -7,7 +17,8 @@
   
   <!-- Preload critical resources first -->
   <link rel="preload" href="/styles.css" as="style">
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900/v1754934593/right1_wangdm.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_800,h_450/v1754934593/right1_wangdm.webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_675/v1754934593/right1_wangdm.webp" fetchpriority="high" media="(min-width: 769px)">
   
   <!-- Speed up connections to third-party hosts -->
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
@@ -142,26 +153,27 @@
         </div>
       </div>
 
-      <!-- Optimized hero image with responsive srcset -->
-      <picture class="hero-img">
+      <!-- Optimized hero image with proper aspect ratios -->
+      <picture>
         <source 
           media="(max-width: 768px)" 
-          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_800,h_600/v1754934593/right1_wangdm.webp 800w"
+          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_800,h_450,c_fill/v1754934593/right1_wangdm.webp"
           type="image/webp">
         <source 
           media="(max-width: 1200px)" 
-          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_800/v1754934593/right1_wangdm.webp 1200w"
+          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1200,h_675,c_fill/v1754934593/right1_wangdm.webp"
           type="image/webp">
         <source 
-          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900/v1754934593/right1_wangdm.webp 1600w"
+          srcset="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900,c_fill/v1754934593/right1_wangdm.webp"
           type="image/webp">
         <img
-          src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900/v1754934593/right1_wangdm.jpg"
+          class="hero-img"
+          src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_1600,h_900,c_fill/v1754934593/right1_wangdm.jpg"
           width="1600" height="900"
-          alt="Lazy Sundays hero"
+          alt="Lazy Sundays hero image showing design work"
           loading="eager"
           fetchpriority="high"
-          decoding="async"
+          decoding="sync"
           style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1;"
         >
       </picture>
@@ -212,7 +224,7 @@
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754749505/CanopyCafe_nqm34f.webp"
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1754749505/CanopyCafe_nqm34f.webp"
                          alt="Charlotte restaurant branding — Canopy Cafe identity"
                          width="400" height="300">
                   </div>
@@ -221,7 +233,7 @@
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754749603/trading_view_elpdwl.webp"
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1754749603/trading_view_elpdwl.webp"
                          alt="FinTech startup identity — funding-ready branding"
                          width="400" height="300">
                   </div>
@@ -253,7 +265,7 @@
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754750431/Screenshot_2025-08-09_at_10.39.59_AM_tnb4bi.webp"
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1754750431/Screenshot_2025-08-09_at_10.39.59_AM_tnb4bi.webp"
                          alt="Wellness logo design — Charlotte health brand"
                          width="400" height="300">
                   </div>
@@ -262,7 +274,7 @@
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754750729/Db4D_h0pk4s.webp"
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1754750729/Db4D_h0pk4s.webp"
                          alt="YouTube logo redesign for local creator"
                          width="400" height="300">
                   </div>
@@ -319,7 +331,7 @@
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754751909/Screenshot_2025-08-09_at_11.04.27_AM_kf4kqn.webp"
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1754751909/Screenshot_2025-08-09_at_11.04.27_AM_kf4kqn.webp"
                          alt="Custom mylar bag packaging design — Charlotte"
                          width="400" height="300">
                   </div>
@@ -328,7 +340,7 @@
                 <div class="tile">
                   <div class="ph">
                     <img class="zoomable" loading="lazy" decoding="async"
-                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300/v1754752148/Screenshot_2025-08-09_at_11.08.56_AM_zbbe1p.webp"
+                         src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1754752148/Screenshot_2025-08-09_at_11.08.56_AM_zbbe1p.webp"
                          alt="Myron jar labels — local product packaging"
                          width="400" height="300">
                   </div>
@@ -368,25 +380,25 @@
                 <button class="car-btn car-prev" aria-label="Previous">‹</button>
                 <div class="track">
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758987/Rainy_Day_App_lzvsbs.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758987/Rainy_Day_App_lzvsbs.webp" 
                        alt="Logo exploration board — Charlotte market fit" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758798/Screenshot_2025-08-09_at_12.58.51_PM_fby337.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758798/Screenshot_2025-08-09_at_12.58.51_PM_fby337.webp" 
                        alt="Logo sheet — wellness & lifestyle motifs" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758796/Screenshot_2025-08-09_at_12.58.31_PM_nmjjqo.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758796/Screenshot_2025-08-09_at_12.58.31_PM_nmjjqo.webp" 
                        alt="Tech branding marks — identity drafts" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758795/Screenshot_2025-08-09_at_12.57.28_PM_pxgzef.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758795/Screenshot_2025-08-09_at_12.57.28_PM_pxgzef.webp" 
                        alt="Typography-first mark — legibility tests" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758794/Screenshot_2025-08-09_at_12.56.12_PM_pws6yj.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758794/Screenshot_2025-08-09_at_12.56.12_PM_pws6yj.webp" 
                        alt="Monochrome variants — packaging check" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758791/Screenshot_2025-08-09_at_12.54.36_PM_zlg9qe.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758791/Screenshot_2025-08-09_at_12.54.36_PM_zlg9qe.webp" 
                        alt="Color exploration — palette testing" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754758791/Screenshot_2025-08-09_at_12.54.23_PM_qqfzja.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754758791/Screenshot_2025-08-09_at_12.54.23_PM_qqfzja.webp" 
                        alt="Applications — signage & social preview" width="600" height="400"></div>
                 </div>
                 <button class="car-btn car-next" aria-label="Next">›</button>
@@ -624,25 +636,25 @@
                 <button class="car-btn car-prev" aria-label="Previous">‹</button>
                 <div class="track">
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760482/Scorpion_rose_fd6sya.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760482/Scorpion_rose_fd6sya.webp" 
                        alt="Character concept art — scorpion rose" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760368/f6c94d42-4b6a-4130-a3bd-e03036808b3d_m0kqdy.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760368/f6c94d42-4b6a-4130-a3bd-e03036808b3d_m0kqdy.webp" 
                        alt="Vector hero mascot — bold geometric style" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760237/ChatGPT_Image_Jun_28_2025_at_05_11_32_PM_lspi5l.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760237/ChatGPT_Image_Jun_28_2025_at_05_11_32_PM_lspi5l.webp" 
                        alt="Fantasy character sheet — color passes" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760237/ChatGPT_Image_Jun_27_2025_09_49_26_PM_uexntr.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760237/ChatGPT_Image_Jun_27_2025_09_49_26_PM_uexntr.webp" 
                        alt="Linework & shading — hero poses" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760183/ChatGPT_Image_Jul_2_2025_10_46_44_PM_q30hxq.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760183/ChatGPT_Image_Jul_2_2025_10_46_44_PM_q30hxq.webp" 
                        alt="Mascot development — brand exploration" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760048/7b54034e-afb9-4fd5-a7f6-ffa3711a6d36_jqb5vk.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760048/7b54034e-afb9-4fd5-a7f6-ffa3711a6d36_jqb5vk.webp" 
                        alt="Moody illustration — atmospheric render" width="600" height="400"></div>
                   <div class="slide"><img class="zoomable" loading="lazy" decoding="async" 
-                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400/v1754760033/1c2267ac-b9d4-44c1-a728-92f83d1f0ea9_hkqxl3.webp" 
+                       src="https://res.cloudinary.com/dxvponxxg/image/upload/f_auto,q_auto,w_600,h_400,c_fill/v1754760033/1c2267ac-b9d4-44c1-a728-92f83d1f0ea9_hkqxl3.webp" 
                        alt="Stylized vector set — brand icons" width="600" height="400"></div>
                 </div>
                 <button class="car-btn car-next" aria-label="Next">›</button>
