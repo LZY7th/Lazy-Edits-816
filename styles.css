@@ -1,3 +1,4 @@
+body { border: 5px solid red; }
 :root{
   /* Dark */
   --bg-dark:#0b0d12; --panel-dark:#0F1218; --ink-dark:#e6e9ef; --ink-dim-dark:#b7bdc8; --line-dark:#182133;
